@@ -14,10 +14,6 @@ from mmaction.apis import (detection_inference, inference_skeleton,
 from mmaction.registry import VISUALIZERS
 from mmaction.utils import frame_extract
 
-try:
-    import moviepy.editor as mpy
-except ImportError:
-    raise ImportError('Please install moviepy to enable output file')
 
 FONTFACE = cv2.FONT_HERSHEY_DUPLEX
 FONTSCALE = 0.75
@@ -32,14 +28,11 @@ def parse_args():
     parser.add_argument('out_filename', help='output filename')
     parser.add_argument(
         '--config',
-        default=('configs/skeleton/posec3d/'
-                 'slowonly_r50_8xb16-u48-240e_ntu60-xsub-keypoint.py'),
+        default=('projects/punch_recognition/config/slowonly_r50_8xb16-u48-240e_ntu60-xsub-keypoint_custom.py'),
         help='skeleton model config file path')
     parser.add_argument(
         '--checkpoint',
-        default=('https://download.openmmlab.com/mmaction/skeleton/posec3d/'
-                 'slowonly_r50_u48_240e_ntu60_xsub_keypoint/'
-                 'slowonly_r50_u48_240e_ntu60_xsub_keypoint-f3adabf1.pth'),
+        default=('work_dirs/slowonly_r50_8xb16-u48-240e_ntu60-xsub-keypoint/best_acc_top1_epoch_9.pth'),
         help='skeleton model checkpoint file/url')
     parser.add_argument(
         '--det-config',
