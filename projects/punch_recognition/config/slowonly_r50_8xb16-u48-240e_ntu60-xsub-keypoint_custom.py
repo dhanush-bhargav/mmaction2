@@ -25,8 +25,8 @@ model = dict(
         average_clips='prob'))
 
 dataset_type = 'PoseDataset'
-ann_file_train = 'Data/custom_dataset_train.pkl'
-ann_file_val = 'Data/custom_dataset_val.pkl'
+ann_file_train = 'projects/punch_recognition/Data/custom_dataset_train.pkl'
+ann_file_val = 'projects/punch_recognition/Data/custom_dataset_val.pkl'
 load_from = 'https://download.openmmlab.com/mmaction/v1.0/skeleton/posec3d/slowonly_r50_8xb16-u48-240e_ntu60-xsub-keypoint/slowonly_r50_8xb16-u48-240e_ntu60-xsub-keypoint_20220815-38db104b.pth'
 left_kp = [1, 3, 5, 7, 9, 11, 13, 15]
 right_kp = [2, 4, 6, 8, 10, 12, 14, 16]
