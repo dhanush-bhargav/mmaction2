@@ -116,7 +116,6 @@ venv.bak/
 /data
 .vscode
 .idea
-*.pkl
 *.pkl.json
 *.log.json
 benchlist.txt
